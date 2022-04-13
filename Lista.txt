@@ -9,3 +9,12 @@ Canto
 Plaza
 Melon
 Siete
+Clase
+Caldo
+Arroz
+Fuego
+Papel
+Lanza
+Torta
+Barco
+Bomba
