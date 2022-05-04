@@ -43,7 +43,7 @@ for i in range(cant_jugadores):
     respuesta_usuario = ""
     intentos = 0
     # Tiempo en segundos desde el inicio del programa hasta que se cargaron los datos
-    start = time.perf_counter()
+    start = int(time.perf_counter())
     while respuesta_usuario != respuesta:
         intentos += 1
         respuesta_usuario = input(jugadores[i] + ", ingrese una palabra de 5 letras: ")
@@ -66,7 +66,7 @@ for i in range(cant_jugadores):
                 print(guiones)
         else:
             print("La palabra ingresada debe tener 5 letras")
-        end = time.perf_counter()
+        end = int(time.perf_counter())
         tiempo = end - start
         print("Llevas ", tiempo, " segundos")
         # Agregamos un if para verificar que no se haya pasado del tiempo limite
@@ -74,7 +74,7 @@ for i in range(cant_jugadores):
             print("Llegaste al límite de tiempo, la palabra era:", respuesta)
             respuesta_usuario = respuesta
     # Tiempo en segundos desde el inicio del programa hasta el final de su ejecución
-    end = time.perf_counter()
+    end = int(time.perf_counter())
     tiempo_final = end - start
     estadisticas.append([jugadores[i], "tiempo: " + str(tiempo_final), "intentos: " + str(intentos)])
 
