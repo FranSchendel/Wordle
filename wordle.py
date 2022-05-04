@@ -46,23 +46,26 @@ for i in range(cant_jugadores):
     start = time.perf_counter()
     while respuesta_usuario != respuesta:
         intentos += 1
-        respuesta_usuario = input(jugadores[i] + ", ingrese una palabra: ")
+        respuesta_usuario = input(jugadores[i] + ", ingrese una palabra de 5 letras: ")
         respuesta_usuario = respuesta_usuario.lower()
-        if respuesta_usuario != respuesta:
-            guiones = ""
-            for l in range (len(respuesta_usuario)):
-                if respuesta_usuario[l] in respuesta:
-                    #Poner un "=" bajo cada letra que estñe en la posición correcta
-                    if respuesta_usuario[l] == respuesta[l]:
-                        guiones += "="
-                    #Poner un "-" bajo cada letra que esté dentro de la palabra
+        if len(respuesta_usuario) == 5:
+            if respuesta_usuario != respuesta:
+                guiones = ""
+                for l in range (len(respuesta_usuario)):
+                    if respuesta_usuario[l] in respuesta:
+                        #Poner un "=" bajo cada letra que estñe en la posición correcta
+                        if respuesta_usuario[l] == respuesta[l]:
+                            guiones += "="
+                        #Poner un "-" bajo cada letra que esté dentro de la palabra
+                        else:
+                            guiones += "-"
+                    #No poner nada bajo cada letra incorrecta
                     else:
-                        guiones += "-"
-                #No poner nada bajo cada letra incorrecta
-                else:
-                    guiones += " "
-            print(respuesta_usuario)
-            print(guiones)
+                        guiones += " "
+                print(respuesta_usuario)
+                print(guiones)
+        else:
+            print("La palabra ingresada debe tener 5 letras")
         end = time.perf_counter()
         tiempo = end - start
         print("Llevas ", tiempo, " segundos")
